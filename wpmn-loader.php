@@ -18,7 +18,7 @@
  * Requires at least: 4.9
  * Requires PHP:      5.2
  * Tested up to:      6.4
- * Version:           2.5.3
+ * Version:           2.5.4
  */
 
 // Exit if accessed directly.
