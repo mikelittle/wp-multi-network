@@ -17,8 +17,8 @@
  * Network:           true
  * Requires at least: 4.9
  * Requires PHP:      5.2
- * Tested up to:      6.1
- * Version:           2.5.2
+ * Tested up to:      6.4
+ * Version:           2.5.3
  */
 
 // Exit if accessed directly.
@@ -220,3 +220,26 @@ function wpmn() {
 
 	return $wpmn;
 }
+
+/**
+ * When we `switch_to_blog` and back, also switch the network.
+ * This fixes an issue in _wp_upload_dir() where it incorrectly thinks
+ * that the current site is the main site on the main network when
+ * it is actually the main site on a different network.
+ *
+ * @param $new_blog_id
+ * @param $prev_blog_id
+ * @param $action
+ *
+ * @return void
+ */
+function action_switch_to_blog_switch_network( $new_blog_id, $prev_blog_id, $action ) {
+	global $current_site;
+	$site = get_site( $new_blog_id );
+	if ( $action === 'switch' ) {
+		switch_to_network( $site->network_id );
+	} else {
+		restore_current_network();
+	}
+}
+add_action( 'switch_blog', 'action_switch_to_blog_switch_network', 10, 3 );

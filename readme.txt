@@ -9,8 +9,8 @@ Contributors:      johnjamesjacoby, flixos90, rmccue, spacedmonkey
 Tags:              network, sites, domains, global, admin
 Requires PHP:      5.2
 Requires at least: 4.9
-Tested up to:      6.1
-Stable tag:        2.5.2
+Tested up to:      6.4
+Stable tag:        2.5.3
 
 == Description ==
 

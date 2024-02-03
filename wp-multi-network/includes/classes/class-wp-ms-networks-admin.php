@@ -804,6 +804,7 @@ class WP_MS_Networks_Admin {
 					echo "<tr class='" . esc_attr( $c ) . "'>";
 					$i = 0;
 					foreach ( $row as $network ) {
+						$network = get_network( $network ); // coerce to \WP_Network
 						$s = ( 3 === $i ) ? '' : 'border-right: 1px solid #ccc;';
 						switch_to_network( $network->id );
 						?>
