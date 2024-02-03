@@ -1,5 +1,5 @@
 {
-  "name": "stuttter/wp-multi-network",
+  "name": "mikelittle/wp-multi-network",
   "description": "Provides a Network Management Interface for global administrators in WordPress Multisite installations.",
   "homepage": "https://wordpress.org/plugins/wp-multi-network/",
   "type": "wordpress-plugin",
