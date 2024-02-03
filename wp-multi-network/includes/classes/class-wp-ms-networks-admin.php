@@ -242,8 +242,7 @@ class WP_MS_Networks_Admin {
 			wp_die( esc_html__( 'You do not have permission to access this page.', 'wp-multi-network' ) );
 		}
 
-		$action = filter_input( INPUT_GET, 'action', FILTER_SANITIZE_STRING );
-		$action = sanitize_key( $action );
+		$action = sanitize_key( $_GET['action'] ?? '');
 
 		switch ( $action ) {
 
@@ -264,9 +263,9 @@ class WP_MS_Networks_Admin {
 
 			// View the list of networks, with bulk action handling.
 			case 'all_networks':
-				$doaction = filter_input( INPUT_POST, 'action', FILTER_SANITIZE_STRING );
+				$doaction = $_GET['action'];
 				if ( empty( $doaction ) || '-1' === $doaction ) {
-					$doaction = filter_input( INPUT_POST, 'action2', FILTER_SANITIZE_STRING );
+					$doaction = $_GET['action2'];;
 				}
 				$doaction = sanitize_key( $doaction );
 
@@ -300,7 +299,7 @@ class WP_MS_Networks_Admin {
 			return;
 		}
 
-		$action = filter_input( INPUT_POST, 'action', FILTER_SANITIZE_STRING );
+		$action = sanitize_key( $_GET['action'] );
 		if ( empty( $action ) ) {
 			$alternative_actions = array( 'delete', 'delete_multiple', 'move' );
 			foreach ( $alternative_actions as $alternative_action ) {
@@ -434,7 +433,7 @@ class WP_MS_Networks_Admin {
 		$all_networks_url = $this->admin_url( array( 'action' => 'all_networks' ) );
 		$search_url       = $this->admin_url( array( 'action' => 'domains' ) );
 
-		$search_text = filter_input( INPUT_POST, 's', FILTER_SANITIZE_STRING );
+		$search_text = $_POST['s'] ?? '';
 		?>
 
 		<div class="wrap">
