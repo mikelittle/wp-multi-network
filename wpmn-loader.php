@@ -235,11 +235,13 @@ function wpmn() {
  */
 function action_switch_to_blog_switch_network( $new_blog_id, $prev_blog_id, $action ) {
 	global $current_site;
+	\Zed1\Debug\zed1_debug( "to blog $new_blog_id, from $prev_blog_id, $action" );
 	$site = get_site( $new_blog_id );
 	if ( $action === 'switch' ) {
+		\Zed1\Debug\zed1_debug( "switching to network {$site->network_id}" );
 		switch_to_network( $site->network_id );
 	} else {
 		restore_current_network();
 	}
 }
-add_action( 'switch_blog', 'action_switch_to_blog_switch_network', 10, 3 );
+//add_action( 'switch_blog', 'action_switch_to_blog_switch_network', 10, 3 );

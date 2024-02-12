@@ -74,7 +74,8 @@ define( 'WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST'] );
 
 ### Single Sign-on
 
-Single Sign-on is a way to keep registered users signed into your installation regardless of what domain, subdomain, and path they are viewing. This functionality is outside the scope of what WP Multi Network hopes to provide, but a dedicated SSO plugin made specifically for WP Multi Network is in development.
+Single Sign-on is a way to keep registered users signed into your installation regardless of what domain, subdomain, and path they are viewing. 
+This functionality is outside the scope of what WP Multi Network hopes to provide, but a dedicated SSO plugin made specifically for WP Multi Network is in development.
 
 # FAQ
 
@@ -96,14 +97,18 @@ Development: https://github.com/stuttter/wp-multi-network/discussions
 
 ### What's up with uploads?
 
-WP Multi-Network needs to be running to set the upload path for new sites. As such, all new networks created with this plugin will have it network activated. If you do disable it on one of your networks, any new site on that network will upload files to that network's root site, effectively causing them to be broken.
+WP Multi-Network needs to be running to set the upload path for new sites. As such, all new networks created with this plugin will have it network activated. 
+If you do disable it on one of your networks, any new site on that network will upload files to that network's root site, effectively causing them to be broken.
 
 Leave this plugin activated, and it will make sure uploads go where they are expected to.
 
 ### Can I achieve a multi-level URL path structure domain/network/site with subfolder network?
 
-To achieve nested folder paths in this fashion `network1/site1`, `network1/site2` etc, please follow the steps in this [article](https://github.com/stuttter/wp-multi-network/wiki/WordPress-Multisite-With-Nested-Folder-Paths) to construct a custom `sunrise.php` (Thanks to [Paul Underwood](https://paulund.co.uk) for providing these steps).
+To achieve nested folder paths in this fashion `network1/site1`, `network1/site2` etc, please follow the steps in this
+[article](https://github.com/stuttter/wp-multi-network/wiki/WordPress-Multisite-With-Nested-Folder-Paths) to construct a 
+custom `sunrise.php` (Thanks to [Paul Underwood](https://paulund.co.uk) for providing these steps).
 
 ### Can I contribute?
 
-Yes! Having an easy-to-use interface and powerful set of functions is critical to managing complex WordPress installations. If this is your thing, please help us out! Read more in the [plugin contributing guidelines](https://github.com/stuttter/wp-multi-network/blob/master/CONTRIBUTING.md).
+Yes! Having an easy-to-use interface and powerful set of functions is critical to managing complex WordPress installations. 
+If this is your thing, please help us out! Read more in the [plugin contributing guidelines](https://github.com/stuttter/wp-multi-network/blob/master/CONTRIBUTING.md).
