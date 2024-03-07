@@ -217,7 +217,7 @@ if ( ! function_exists( 'switch_to_network' ) ) :
 	 */
 	function switch_to_network( $new_network = 0, $validate = false ) {
 		global $wpdb, $switched_network, $switched_network_stack, $current_site;
-		\Zed1\Debug\zed1_debug( $new_network );
+		//\Zed1\Debug\zed1_debug( $new_network );
 		if ( empty( $new_network ) ) {
 			$new_network = $current_site->id;
 		}
@@ -289,7 +289,7 @@ if ( ! function_exists( 'restore_current_network' ) ) :
 	 */
 	function restore_current_network() {
 		global $wpdb, $switched_network, $switched_network_stack, $current_site;
-		\Zed1\Debug\zed1_debug('start. network is', $current_site->id);
+		//\Zed1\Debug\zed1_debug('start. network is', $current_site->id);
 		// Bail if not switched.
 		if ( true !== $switched_network ) {
 			return false;
@@ -308,7 +308,7 @@ if ( ! function_exists( 'restore_current_network' ) ) :
 			/** This action is documented in wp-multi-network/includes/functions.php */
 			do_action( 'switch_network', $current_site->id, $current_site->id );
 			$switched_network = ( ! empty( $switched_network_stack ) );
-			\Zed1\Debug\zed1_debug('same. network is', $new_network->id);
+			//\Zed1\Debug\zed1_debug('same. network is', $new_network->id);
 			return true;
 		}
 
@@ -322,7 +322,7 @@ if ( ! function_exists( 'restore_current_network' ) ) :
 
 		/** This action is documented in wp-multi-network/includes/functions.php */
 		do_action( 'switch_network', $new_network->id, $prev_network_id );
-		\Zed1\Debug\zed1_debug('different. network is', $current_site->id);
+		//\Zed1\Debug\zed1_debug('different. network is', $current_site->id);
 
 		$switched_network = ! empty( $switched_network_stack );
 
